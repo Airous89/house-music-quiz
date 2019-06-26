@@ -5,84 +5,55 @@ let score = 0;
 var STORE = [
 {
     question: 'what is the first track to be considered acid house?', 
-       A:'808 state: Cubik',
-       B:'Phuture: Acid Trax',
-       C:'LAX: Gbefun',
-       D:'The Juice: Mr.Fingers',
-       correctAnswer: 'Phuture: Acid Trax'
+       answers: ['808 state: Cubik','Phuture: Acid Trax','LAX: Gbefun','The Juice: Mr.Fingers'],
+       correctAnswer: 'Phuture: Acid Trax',    
 },
 {
     question: 'House music is often called the child of what other genre of music',
-        A:'Rock',
-        B:'Pop',
-        C:'Disco',
-        D:'Classical',
+        answers: ['Rock','Pop','Disco','Classical',],
         correctAnswer: 'Disco',
 },
 {
     question: 'The first house music mix came in what year',
-        A:'1981',
-        B:'1979',
-        C:'1986',
-        D:'1977',
+        answers: ['1981','1979','1986','1977',],
         correctAnswer: '1981',
 },
 {
     question: 'House music orginated from where?',
-        A:'Paris',
-        B:'Detroit',
-        C:'New York',
-        D:'Chicago',
+        answers: ['Paris','Detroit','New York','Chicago',],
         correctAnswer: 'Chicago',
 },
 {
     question: 'The club famous for House Music was',
-        A:'Warehouse',
-        B:'Land',
-        C:'The House',
-        D:'Place',
+        answers: ['Warehouse','Land','The House','Place',],
         correctAnswer: 'Warehouse',
 },
 { 
     question: 'Two DJ famous for pinonering House were ?',
-        A:'Franky Knuckles and Ron Hardy',
-        B:'Manifeston and Marshall Jefferson',
-        C:'Langris and Whis',
-        D:'Carl Cox and Paul Oakenfield',
+        answers: ['Franky Knuckles and Ron Hardy','Manifeston and Marshall Jefferson','Langris and Whis',
+        'Carl Cox and Paul Oakenfield',],
         correctAnswer: 'Franky Knuckles and Ron Hardy',
 
 },
 {
     question: 'The spirtuall home of Techno is?',
-        A:'Berlin',
-        B:'Hamburg',
-        C:'Chicago',
-        D:'New York',
+        answers: ['Berlin','Hamburg','Chicago','New York',],
         correctAnswer: 'Berlin',
 
 },
 {
     question: 'What was the technology that help to create house music?',
-        A:'TR-808',
-        B:'TS-303',
-        C:'drum pad',
-        D:'gutare',
+        answers: ['TR-808','TS-303','drum pad','gutare',],
         correctAnswer: 'TR-808',
 },
 {
     question: 'who is considered the creator of deep house?',
-        A:'Larry Heard',
-        B:'Franky Knuckles',
-        C:'Marc Lands',
-        D:'Knos',
+        answers: ['Larry Heard','Franky Knuckles','Marc Lands','Knos',],
         correctAnswer: 'Larry Heard', 
 },
 {
     question: 'The record studio that became famous for House Music was?',
-        A:'Trax',
-        B:'Ultra',
-        C:'Jes say',
-        D:'MOS(Minstry of Sound)',
+        answers: ['Trax','Ultra','Jes say','MOS(Minstry of Sound)',],
         correctAnswer: 'Jes say', 
 }
 ];
@@ -179,14 +150,14 @@ function generateQuestion () {
   //user feedback for correct answer
   function userAnswerFeedbackCorrect () {
     let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
-    $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"><img src="${STORE[questionNumber].icon}" alt="${STORE[questionNumber].alt}"/></div><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
+    $('.questionAnswerForm').html(`<div class="correctFeedback"><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
   }
   
   //user feedback for wrong answer
   function userAnswerFeedbackWrong () {
     let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
     // let iconImage = `${STORE[questionNumber].icon}`;
-    $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"><img src="${STORE[questionNumber].icon}" alt="${STORE[questionNumber].alt}"/></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
+    $('.questionAnswerForm').html(`<div class="correctFeedback"><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
   }
   
   //update score text
